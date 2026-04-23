@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praful & Anjitha</title>
-  <div id="intro" onclick="openInvite()">
-  <h1>You're Invited</h1>
-  <p class="tap-text">Tap anywhere to open 💌</p>
-  </div>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
@@ -20,7 +16,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ❤️Animated Background */
+/* Background */
 .bg {
   position: fixed;
   width: 100%;
@@ -36,7 +32,7 @@ body {
   100% {background-position:0% 50%;}
 }
 
-/* 💗 Glow blobs */
+/* Glow */
 .glow span {
   position: fixed;
   width: 300px;
@@ -69,6 +65,23 @@ body {
   cursor:pointer;
 }
 
+#intro h1 {
+  font-family: 'Playfair Display';
+  font-size: 42px;
+}
+
+.tap-text {
+  margin-top: 15px;
+  opacity: 0.7;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {opacity: 0.4;}
+  50% {opacity: 1;}
+  100% {opacity: 0.4;}
+}
+
 /* Hero */
 .hero {
   height:110vh;
@@ -98,7 +111,6 @@ body {
   overflow:hidden;
 }
 
-/* Shine */
 .section::before {
   content:"";
   position:absolute;
@@ -115,7 +127,7 @@ body {
   100%{left:120%;}
 }
 
-/* Event grid */
+/* Event */
 .event-grid {
   display:grid;
   gap:15px;
@@ -126,22 +138,10 @@ body {
   background:rgba(255,255,255,0.06);
   padding:15px;
   border-radius:12px;
-  backdrop-filter:blur(10px);
-  transition:0.3s;
-}
-
-.event-box:hover {
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(255,255,255,0.1);
 }
 
 .event-box span {
-  font-size:13px;
   opacity:0.7;
-}
-
-.event-box p {
-  margin-top:5px;
 }
 
 /* Countdown */
@@ -174,7 +174,6 @@ button {
   margin:10px;
   border-radius:25px;
   border:none;
-  cursor:pointer;
 }
 .yes {background:#ff4d6d;}
 .no {background:#444; color:white;}
@@ -198,13 +197,13 @@ button {
 <div class="bg"></div>
 
 <div class="glow">
-  <span></span>
-  <span></span>
-  <span></span>
+  <span></span><span></span><span></span>
 </div>
 
+<!-- Intro -->
 <div id="intro" onclick="openInvite()">
-  <h1>You're Invited </h1>
+  <h1>You're Invited</h1>
+  <p class="tap-text">Tap anywhere to open 💌</p>
 </div>
 
 <div class="hero">
@@ -214,79 +213,49 @@ button {
 <!-- Wedding -->
 <div class="section">
   <h2>Wedding Ceremony</h2>
-
   <div class="event-grid">
-    <div class="event-box">
-      <span>🗓️Date</span>
-      <p>10 May 2026</p>
-    </div>
-
-    <div class="event-box">
-      <span>🕠 Time</span>
-      <p>08:00 AM – 09:00 AM</p>
-    </div>
-
-    <div class="event-box">
-      <span>📍 Venue</span>
-      <p>Konni Memorial Sri Kanyaka Maheshwari Devi Temple Hall, Thrissur</p>
-    </div>
+    <div class="event-box"><span>Date</span><p>10 May 2026</p></div>
+    <div class="event-box"><span>Time</span><p>08:00 AM – 09:00 AM</p></div>
+    <div class="event-box"><span>Venue</span><p>Konni Memorial Sri Kanyaka Maheshwari Devi Temple Hall, Thrissur</p></div>
   </div>
 </div>
 
 <!-- Reception -->
 <div class="section">
   <h2>Reception</h2>
-
   <div class="event-grid">
-    <div class="event-box">
-      <span>🗓️Date</span>
-      <p>12 May 2026</p>
-    </div>
-
-    <div class="event-box">
-      <span>🕠Time</span>
-      <p>From 3:30 PM onwards</p>
-    </div>
-
-    <div class="event-box">
-      <span>📍 Venue</span>
-      <p>MS Auditorium, Muthuvila</p>
-    </div>
+    <div class="event-box"><span>Date</span><p>12 May 2026</p></div>
+    <div class="event-box"><span>Time</span><p>From 3:30 PM onwards</p></div>
+    <div class="event-box"><span>Venue</span><p>MS Auditorium, Muthuvila</p></div>
   </div>
 </div>
 
 <!-- Countdown -->
 <div class="section">
-  <h2>Time Left </h2>
+  <h2>Time Left ⏳</h2>
   <div id="countdown"></div>
 </div>
 
 <!-- RSVP -->
 <div class="section">
-  <h2>Will you join us? </h2>
-  <button class="yes" onclick="showYes()">Yes </button>
-  <button class="no" onclick="showNo()">No </button>
+  <h2>Will you join us? ❤️</h2>
+  <button class="yes" onclick="showYes()">Yes ❤️</button>
+  <button class="no" onclick="showNo()">No 😢</button>
 </div>
 
 <!-- Location -->
 <div class="section">
-  <h2>Reception Location </h2>
-
+  <h2>Reception Location 📍</h2>
   <iframe src="https://www.google.com/maps?q=MS+Auditorium+Muthuvila+Thiruvananthapuram&output=embed"></iframe>
-
-  <p style="margin-top:10px;opacity:0.8;">MS Auditorium, Muthuvila</p>
-
-  <a class="mapbtn" href="https://maps.app.goo.gl/jYEsNf7yVNQ5qNJ78" target="_blank">
-    Open in Google Maps
-  </a>
+  <a class="mapbtn" href="https://maps.app.goo.gl/jYEsNf7yVNQ5qNJ78" target="_blank">Open in Google Maps</a>
 </div>
 
 <div id="yesPopup" class="popup">
-  <h2>We can’t wait to celebrate with you </h2>
+  <h2>We can't wait to celebrate with you ❤️</h2>
 </div>
 
 <div id="noPopup" class="popup">
-  <h2>We will miss you </h2>
+  <h2>We will miss you 😢</h2>
 </div>
 
 <audio id="music" src="music.mp3" loop></audio>
@@ -315,6 +284,7 @@ setInterval(()=>{
 function showYes(){
   document.getElementById("yesPopup").classList.add("show");
 }
+
 function showNo(){
   document.getElementById("noPopup").classList.add("show");
 }
